@@ -1,0 +1,4 @@
+experiment,lr,batch_size,epochs,accuracy
+exp1,0.001,64,5,0.7228
+exp2,0.0005,64,5,0.694
+exp3,0.001,128,10,0.7281

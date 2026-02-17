@@ -1,17 +1,26 @@
 [project]
-name = "ml-lab2"
+name = "mlframeworks-lab1"
 version = "0.1.0"
-description = "Add your description here"
+description = "Reproducible ML environment verification using uv"
 readme = "README.md"
-requires-python = ">=3.12"
-dependencies = []
+requires-python = ">=3.12,<3.13"
 
-[dependency-groups]
-dev = [
+dependencies = [
+    "numpy",
+    "torch>=2.0,<3.0",
+    "torchvision",
+    "torchaudio",
+    "scikit-learn",
+    "pandas",
+    "jupyter",
     "dvc>=3.66.1",
-    "matplotlib>=3.10.8",
-    "pandas>=3.0.0",
-    "scikit-learn>=1.8.0",
-    "torch>=2.10.0",
-    "torchvision>=0.25.0",
 ]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu121" }
+torchvision = { index = "pytorch-cu121" }
+torchaudio = { index = "pytorch-cu121" }
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
